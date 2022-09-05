@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhak4wol77cjw"]
+[gd_scene load_steps=7 format=3 uid="uid://dhak4wol77cjw"]
 
 [ext_resource type="Texture2D" uid="uid://dhxgdhhs7ekbr" path="res://assets/sprites/Background/background_static.png" id="1_fb18u"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_qgigv"]
 [ext_resource type="PackedScene" uid="uid://v3jkhjfhvh6s" path="res://scenes/platform.tscn" id="2_3g8hs"]
 [ext_resource type="PackedScene" uid="uid://dad3k1p26h3oh" path="res://scenes/player.tscn" id="3_comnb"]
 [ext_resource type="PackedScene" uid="uid://du7ui00a7hv8y" path="res://scenes/collectible.tscn" id="4_e16pi"]
+[ext_resource type="AudioStream" uid="uid://c8imc8sebswq0" path="res://assets/sounds/collect.wav" id="6_sbn1k"]
 
 [node name="World" type="Node2D" groups=["example"]]
 script = ExtResource("1_qgigv")
@@ -27,6 +28,23 @@ texture = ExtResource("1_fb18u")
 [node name="Collectible" parent="Environment/Moving" instance=ExtResource("4_e16pi")]
 position = Vector2(78, -108)
 
+[node name="Collectible2" parent="Environment/Moving" instance=ExtResource("4_e16pi")]
+position = Vector2(199, -116)
+
+[node name="Collectible3" parent="Environment/Moving" instance=ExtResource("4_e16pi")]
+position = Vector2(302, -96)
+
+[node name="Collectible4" parent="Environment/Moving" instance=ExtResource("4_e16pi")]
+position = Vector2(427, -63)
+
+[node name="Collectible5" parent="Environment/Moving" instance=ExtResource("4_e16pi")]
+position = Vector2(541, -51)
+
 [node name="Player" parent="." instance=ExtResource("3_comnb")]
 position = Vector2(-150, -150)
 scale = Vector2(0.4, 0.4)
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_sbn1k")
