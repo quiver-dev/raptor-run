@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var moving_environment = $"/root/World/Environment/Moving"
 @onready var collect_sound = $"/root/World/Sounds/CollectSound"
+@onready var score_label = $"/root/World/HUD/UI/Score"
 
 var platform = preload("res://scenes/platform.tscn")
 var rng = RandomNumberGenerator.new()
@@ -27,6 +28,9 @@ func _process(delta):
 	# Spawn a new platform
 	if Time.get_ticks_msec() > next_spawn_time:
 		_spawn_next_platform()
+	
+	# Update the UI labels
+	score_label.text = "Score: %s" % score
 
 func _spawn_next_platform():
 	var new_platform = platform.instantiate()
@@ -56,4 +60,3 @@ func add_score(value):
 	collect_sound.play()
 	collectible_pitch += 0.1
 	reset_collectible_pitch_time = Time.get_ticks_msec() + collectible_pitch_reset_interval
-	print(score)
