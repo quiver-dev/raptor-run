@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://j530xrghcvqj"]
+[gd_scene load_steps=33 format=3 uid="uid://j530xrghcvqj"]
 
 [ext_resource type="Texture2D" uid="uid://cui81f8bbaq6j" path="res://assets/sprites/Dino Enemy/dino_enemy_death.png" id="1_cpgro"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_ypnjo"]
 [ext_resource type="Texture2D" uid="uid://bwqctbg73i634" path="res://assets/sprites/Dino Enemy/dino_enemy_idle.png" id="2_ojrni"]
 [ext_resource type="Texture2D" uid="uid://dsgh8m8pwa7j" path="res://assets/sprites/Dino Enemy/dino_enemy_walk.png" id="3_p7h8q"]
+[ext_resource type="AudioStream" uid="uid://c8cslbhx1366d" path="res://assets/sounds/enemy_death.wav" id="5_6fnjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f882v"]
 atlas = ExtResource("1_cpgro")
@@ -132,7 +133,7 @@ script = ExtResource("1_ypnjo")
 [node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_p7pfp")
 animation = &"idle"
-frame = 4
+frame = 2
 playing = true
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
@@ -145,3 +146,6 @@ collision_mask = 2
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-16, 20)
 shape = SubResource("RectangleShape2D_syt6e")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6fnjy")
