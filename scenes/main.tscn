@@ -1,7 +1,12 @@
-[gd_scene format=3 uid="uid://dhak4wol77cjw"]
+[gd_scene load_steps=2 format=3 uid="uid://dhak4wol77cjw"]
+
+[ext_resource type="Texture2D" uid="uid://dhxgdhhs7ekbr" path="res://assets/sprites/Background/background_static.png" id="1_fb18u"]
 
 [node name="World" type="Node2D" groups=["example"]]
 
 [node name="Camera2d" type="Camera2D" parent="."]
 current = true
 zoom = Vector2(1.5, 1.5)
+
+[node name="Background" type="Sprite2D" parent="Camera2d"]
+texture = ExtResource("1_fb18u")
