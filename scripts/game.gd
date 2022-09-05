@@ -10,6 +10,7 @@ signal game_over
 @onready var score_label = $"/root/World/HUD/UI/Score"
 @onready var player = $"/root/World/Player"
 @onready var ground = $"/root/World/Environment/Static/Ground"
+@onready var game_over_label = $"/root/World/HUD/UI/GameOver"
 
 var platform = preload("res://scenes/platform.tscn")
 var platform_collectible_single = preload("res://scenes/platform_collectible_single.tscn")
@@ -32,6 +33,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not player.active:
+		# Reload the game if we're not playing and the user hits space
+		if Input.is_action_just_pressed("jump"):
+			get_tree().reload_current_scene()
 		return
 		
 	# Reset the collectible sound pitch after a time
@@ -88,6 +92,8 @@ func add_score(value):
 
 func _on_player_died():
 	emit_signal("game_over")
+	game_over_label.text = game_over_label.text % score
+	game_over_label.set_visible(true)
 
 func _on_ground_body_entered(body):
 	if body.is_in_group("player"):

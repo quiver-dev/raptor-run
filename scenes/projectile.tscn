@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bgw3vrjsitajc"]
+
+[node name="Projectile" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 5
