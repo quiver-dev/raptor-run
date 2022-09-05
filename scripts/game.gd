@@ -9,6 +9,7 @@ signal game_over
 @onready var collect_sound = $"/root/World/Sounds/CollectSound"
 @onready var score_label = $"/root/World/HUD/UI/Score"
 @onready var player = $"/root/World/Player"
+@onready var ground = $"/root/World/Environment/Static/Ground"
 
 var platform = preload("res://scenes/platform.tscn")
 var platform_collectible_single = preload("res://scenes/platform_collectible_single.tscn")
@@ -26,6 +27,7 @@ var reset_collectible_pitch_time = 0
 func _ready():
 	rng.randomize()
 	player.player_died.connect(_on_player_died)
+	ground.body_entered.connect(_on_ground_body_entered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -86,3 +88,7 @@ func add_score(value):
 
 func _on_player_died():
 	emit_signal("game_over")
+
+func _on_ground_body_entered(body):
+	if body.is_in_group("player"):
+		player.die()

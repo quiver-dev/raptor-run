@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhak4wol77cjw"]
+[gd_scene load_steps=9 format=3 uid="uid://dhak4wol77cjw"]
 
 [ext_resource type="Texture2D" uid="uid://dhxgdhhs7ekbr" path="res://assets/sprites/Background/background_static.png" id="1_fb18u"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_qgigv"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlrb0"]
 size = Vector2(1800, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apy3k"]
+size = Vector2(3000, 20)
 
 [node name="World" type="Node2D" groups=["example"]]
 script = ExtResource("1_qgigv")
@@ -30,6 +33,13 @@ script = ExtResource("3_3ktmo")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Environment/Static/PlayArea"]
 shape = SubResource("RectangleShape2D_tlrb0")
+
+[node name="Ground" type="Area2D" parent="Environment/Static"]
+collision_mask = 2
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Environment/Static/Ground"]
+position = Vector2(0, 600)
+shape = SubResource("RectangleShape2D_apy3k")
 
 [node name="Moving" type="Node2D" parent="Environment"]
 
@@ -56,6 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Score" type="Label" parent="HUD/UI"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
