@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://j530xrghcvqj"]
+[gd_scene load_steps=31 format=3 uid="uid://j530xrghcvqj"]
 
 [ext_resource type="Texture2D" uid="uid://cui81f8bbaq6j" path="res://assets/sprites/Dino Enemy/dino_enemy_death.png" id="1_cpgro"]
 [ext_resource type="Texture2D" uid="uid://bwqctbg73i634" path="res://assets/sprites/Dino Enemy/dino_enemy_idle.png" id="2_ojrni"]
@@ -118,10 +118,28 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75nen"]
+size = Vector2(160, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syt6e"]
+size = Vector2(160, 200)
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
 
 [node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_p7pfp")
 animation = &"idle"
 frame = 2
 playing = true
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(-15, 35)
+shape = SubResource("RectangleShape2D_75nen")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-16, 20)
+shape = SubResource("RectangleShape2D_syt6e")
