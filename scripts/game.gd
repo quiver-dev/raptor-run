@@ -8,6 +8,7 @@ var platform = preload("res://scenes/platform.tscn")
 var rng = RandomNumberGenerator.new()
 var last_platform_position = Vector2.ZERO
 var next_spawn_time = 0
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,3 +41,7 @@ func _spawn_next_platform():
 func _physics_process(delta):
 	# Move the platforms left
 	moving_environment.position.x -= world_speed * delta
+
+func add_score(value):
+	score += value
+	print(score)
