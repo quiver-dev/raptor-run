@@ -56,7 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Score" type="Label" parent="HUD/UI"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
