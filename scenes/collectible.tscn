@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://du7ui00a7hv8y"]
+[gd_scene load_steps=24 format=3 uid="uid://du7ui00a7hv8y"]
 
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_beqtm"]
 [ext_resource type="Texture2D" uid="uid://cygwxdieerqxy" path="res://assets/sprites/Collectible/collectible_collected.png" id="1_jenrr"]
 [ext_resource type="Texture2D" uid="uid://bgwm2h0q85kaq" path="res://assets/sprites/Collectible/collectible_idle.png" id="2_f01tf"]
 
@@ -93,11 +94,12 @@ size = Vector2(120, 90)
 
 [node name="Collectible" type="Area2D"]
 collision_mask = 2
+script = ExtResource("1_beqtm")
 
 [node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_43ucr")
 animation = &"idle"
-frame = 6
+frame = 8
 playing = true
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
