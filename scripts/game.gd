@@ -11,6 +11,7 @@ var platform = preload("res://scenes/platform.tscn")
 var platform_collectible_single = preload("res://scenes/platform_collectible_single.tscn")
 var platform_collectible_row = preload("res://scenes/platform_collectible_row.tscn")
 var platform_collectible_rainbow = preload("res://scenes/platform_collectible_rainbow.tscn")
+var platform_enemy = preload("res://scenes/platform_enemy.tscn")
 var rng = RandomNumberGenerator.new()
 var last_platform_position = Vector2.ZERO
 var next_spawn_time = 0
@@ -40,7 +41,8 @@ func _spawn_next_platform():
 		platform,
 		platform_collectible_single,
 		platform_collectible_row,
-		platform_collectible_rainbow		
+		platform_collectible_rainbow,
+		platform_enemy
 	]
 	
 	var platform_index = rng.randi_range(0, available_platforms.size() - 1)
