@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://dhak4wol77cjw"]
 
 [node name="World" type="Node2D" groups=["example"]]
+
+[node name="Camera2d" type="Camera2D" parent="."]
+current = true
+zoom = Vector2(1.5, 1.5)
