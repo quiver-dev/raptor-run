@@ -75,3 +75,6 @@ func die():
 func _on_animation_finished():
 	if sprite.animation == "shoot":
 		sprite.play("run")
+
+func add_ammo(amount):
+	ammo += amount

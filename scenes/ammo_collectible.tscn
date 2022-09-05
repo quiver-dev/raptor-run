@@ -1,0 +1,108 @@
+[gd_scene load_steps=24 format=3 uid="uid://5ie2ilae0ume"]
+
+[ext_resource type="Script" path="res://scripts/ammo_collectible.gd" id="1_msrgp"]
+[ext_resource type="Texture2D" uid="uid://dsu5foqdof10r" path="res://assets/sprites/Collectible/ammo_collectible_collected.png" id="2_83x7i"]
+[ext_resource type="Texture2D" uid="uid://dxacxfohskmwk" path="res://assets/sprites/Collectible/ammo_collectible_idle.png" id="3_36vf3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af72u"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntwf7"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pd5x"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eh21"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qckxd"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afapp"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o7fj"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iomcb"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxpxd"]
+atlas = ExtResource("2_83x7i")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ibo5"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nafii"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs5rj"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1akj"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq5we"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1ahs"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58urh"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3es7t"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e66c8"]
+atlas = ExtResource("3_36vf3")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43ucr"]
+animations = [{
+"frames": [SubResource("AtlasTexture_af72u"), SubResource("AtlasTexture_ntwf7"), SubResource("AtlasTexture_7pd5x"), SubResource("AtlasTexture_2eh21"), SubResource("AtlasTexture_qckxd"), SubResource("AtlasTexture_afapp"), SubResource("AtlasTexture_3o7fj"), SubResource("AtlasTexture_iomcb"), SubResource("AtlasTexture_uxpxd")],
+"loop": true,
+"name": &"collected",
+"speed": 12.0
+}, {
+"frames": [SubResource("AtlasTexture_2ibo5"), SubResource("AtlasTexture_nafii"), SubResource("AtlasTexture_qs5rj"), SubResource("AtlasTexture_u1akj"), SubResource("AtlasTexture_rq5we"), SubResource("AtlasTexture_t1ahs"), SubResource("AtlasTexture_58urh"), SubResource("AtlasTexture_3es7t"), SubResource("AtlasTexture_e66c8")],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fa3yq"]
+size = Vector2(120, 90)
+
+[node name="Collectible" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_msrgp")
+
+[node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_43ucr")
+animation = &"idle"
+frame = 3
+playing = true
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fa3yq")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
