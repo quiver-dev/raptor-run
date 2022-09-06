@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://2led0kteg2sb" path="res://assets/sounds/background_music.mp3" id="1_23mfe"]
 
-[node name="Node" type="Node"]
+[node name="Music" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_23mfe")

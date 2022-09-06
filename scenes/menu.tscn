@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://dey2n7rj4qqub"]
+
+[ext_resource type="Texture2D" uid="uid://dhxgdhhs7ekbr" path="res://assets/sprites/Background/background_static.png" id="1_svv3m"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="2_24anh"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="BackgroundStatic" type="Sprite2D" parent="."]
+position = Vector2(940, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_svv3m")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 1880.0
+offset_bottom = 178.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 128
+text = "Raptor Run"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 182.0
+offset_right = 1880.0
+offset_bottom = 478.0
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+offset_top = 100.0
+offset_right = 1880.0
+offset_bottom = 296.0
+script = ExtResource("2_24anh")
+
+[node name="StartButton" type="Button" parent="UI/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_left = 762.0
+offset_right = 1118.0
+offset_bottom = 96.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="UI/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_left = 879.0
+offset_top = 100.0
+offset_right = 1001.0
+offset_bottom = 196.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Exit"
