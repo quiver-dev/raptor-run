@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_tlrb0")
 collision_mask = 2
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Environment/Static/Ground"]
-position = Vector2(0, 600)
+position = Vector2(0, 2000)
 shape = SubResource("RectangleShape2D_apy3k")
 
 [node name="Moving" type="Node2D" parent="Environment"]
@@ -66,6 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Score" type="Label" parent="HUD/UI"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -81,6 +82,7 @@ text = "Score: 1000"
 horizontal_alignment = 2
 
 [node name="Ammo" type="Label" parent="HUD/UI"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -97,6 +99,7 @@ horizontal_alignment = 2
 
 [node name="GameOver" type="Label" parent="HUD/UI"]
 visible = false
+layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
