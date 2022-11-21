@@ -17,7 +17,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="MarginContainer" type="MarginContainer" parent="UI"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,14 +28,12 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
-layout_mode = 2
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 1900.0
 offset_bottom = 1060.0
 
 [node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 1880.0
 offset_bottom = 178.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -46,21 +43,18 @@ text = "Raptor Run"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 182.0
 offset_right = 1880.0
 offset_bottom = 478.0
 theme_override_constants/margin_top = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
 offset_top = 100.0
 offset_right = 1880.0
 offset_bottom = 296.0
 script = ExtResource("2_24anh")
 
 [node name="StartButton" type="Button" parent="UI/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_left = 762.0
 offset_right = 1118.0
 offset_bottom = 96.0
@@ -69,7 +63,6 @@ theme_override_font_sizes/font_size = 64
 text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="UI/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_left = 879.0
 offset_top = 100.0
 offset_right = 1001.0
