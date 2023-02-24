@@ -17,7 +17,6 @@ size = Vector2(3000, 20)
 script = ExtResource("1_qgigv")
 
 [node name="Camera2d" type="Camera2D" parent="."]
-current = true
 zoom = Vector2(1.5, 1.5)
 
 [node name="Background" type="Sprite2D" parent="Camera2d"]
@@ -66,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Score" type="Label" parent="HUD/UI"]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -175.0
@@ -81,7 +80,7 @@ text = "Score: 1000"
 horizontal_alignment = 2
 
 [node name="Ammo" type="Label" parent="HUD/UI"]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -267.0
@@ -97,7 +96,7 @@ horizontal_alignment = 2
 
 [node name="GameOver" type="Label" parent="HUD/UI"]
 visible = false
-anchors_preset = 14
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5

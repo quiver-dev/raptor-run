@@ -78,12 +78,66 @@ region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_43ucr"]
 animations = [{
-"frames": [SubResource("AtlasTexture_f2hjj"), SubResource("AtlasTexture_jnhdk"), SubResource("AtlasTexture_1lmd4"), SubResource("AtlasTexture_5jbf2"), SubResource("AtlasTexture_84r6v"), SubResource("AtlasTexture_v0qpv"), SubResource("AtlasTexture_dyspx"), SubResource("AtlasTexture_wkf88"), SubResource("AtlasTexture_0k6cy")],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2hjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnhdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lmd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jbf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84r6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0qpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyspx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkf88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k6cy")
+}],
+"loop": false,
 "name": &"collected",
 "speed": 12.0
 }, {
-"frames": [SubResource("AtlasTexture_kt650"), SubResource("AtlasTexture_iw06q"), SubResource("AtlasTexture_jrwj2"), SubResource("AtlasTexture_2ldek"), SubResource("AtlasTexture_2hkfl"), SubResource("AtlasTexture_sjldl"), SubResource("AtlasTexture_rdxfa"), SubResource("AtlasTexture_6ijhw"), SubResource("AtlasTexture_0isp6")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt650")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw06q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrwj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ldek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hkfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjldl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdxfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ijhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0isp6")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 12.0
@@ -97,10 +151,9 @@ collision_mask = 2
 script = ExtResource("1_beqtm")
 
 [node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_43ucr")
+sprite_frames = SubResource("SpriteFrames_43ucr")
 animation = &"idle"
-frame = 8
-playing = true
+autoplay = "idle"
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fa3yq")
